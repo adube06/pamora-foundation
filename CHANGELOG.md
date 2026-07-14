@@ -62,3 +62,15 @@ All notable changes to the Pamora Foundation documentation are recorded here.
 ### Removed
 
 * `05-ai/01-claude-project-start.md`, `02-claude-feature.md`, `03-claude-review.md`, `04-claude-refactor.md` — placeholder stubs superseded by Claude Context and the AI Prompt Library.
+
+---
+
+## [1.3.1] — 2026-07-14
+
+### Added
+
+* Decisions: ADR-022 — One Brand, Many Platforms. Fills the gap noted in 1.3.0; brand identity now formally extends through Design Tokens to every surface Pamora appears on (web, mobile, admin, documentation, marketing, presentations, emails, social media).
+
+### Changed
+
+* `03-design/09-brand-guidelines.md` — added the Architecture Note cross-referencing ADR-022, matching the pattern already used in the other Design Foundation documents.

@@ -299,6 +299,31 @@ A deliverable is considered on-brand when it:
 
 ---
 
+# Architecture Note — One Brand, Many Platforms (ADR-022)
+
+The base rule of the Brand Foundation:
+
+```text
+Brand Identity
+       │
+       ▼
+Design Tokens
+       │
+       ▼
+Web
+Mobile
+Admin
+Documentation
+Marketing
+Presentations
+Emails
+Social Media
+```
+
+Regardless of whether a user encounters Pamora through the Web App, the Flutter App, the Landing Page, an Email, a PDF, a Presentation, or Social Media, they should immediately recognize it as the same Pamora product. See [ADR-022](../06-decisions/ADR-022-one-brand-many-platforms.md).
+
+---
+
 # Related Documents
 
 * Design System
