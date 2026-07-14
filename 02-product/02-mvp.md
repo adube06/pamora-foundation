@@ -48,7 +48,7 @@ Supporting:
 
 * Guests
 
-Vendor capabilities are intentionally limited in the MVP.
+Vendors are not a V1.0 persona. Marketplace and vendor capability are introduced in Release 1.1 (see [Roadmap](08-roadmap.md)).
 
 ---
 
@@ -144,20 +144,9 @@ Excluded:
 
 ## Marketplace
 
-Included:
+**Deferred to Release 1.1.** Not part of V1.0.
 
-* Vendor registration
-* Vendor profile
-* Vendor services
-* Quotation requests
-* Booking workflow
-
-Excluded:
-
-* Escrow
-* Dynamic pricing
-* Inventory optimization
-* Package builder
+V1.0 ships with no Marketplace capability at all: no vendor registration, vendor profiles, vendor services, quotation requests, or booking workflow. See Release 1.1 in the [Roadmap](08-roadmap.md) for full scope.
 
 ---
 
@@ -256,10 +245,10 @@ Included:
 
 * Public Occasion Page
 * RSVP
-* Vendor profiles
 
 Excluded:
 
+* Vendor profiles (Release 1.1 — Marketplace is not part of V1.0)
 * Public marketplace search optimization
 * Organization portal
 
@@ -271,12 +260,12 @@ Included:
 
 * User management
 * Occasion management
-* Vendor approval
 * Reports
 * Audit logs
 
 Excluded:
 
+* Vendor approval (Release 1.1 — Marketplace is not part of V1.0)
 * CMS
 * Advanced moderation
 * Analytics dashboards
@@ -337,9 +326,9 @@ The MVP is considered validated when:
 
 ---
 
-# Recommendation — Slice V1.0 Further
+# Release Slicing (Adopted)
 
-After reviewing the full Foundation, the first MVP should be trimmed further, ahead of coding.
+The Included Domains above are further sliced into releases, ahead of coding. This is the authoritative V1.0 scope — the "Marketplace" and "Vendor" exclusions above exist because of this slicing decision.
 
 ## V1.0 (Core)
 

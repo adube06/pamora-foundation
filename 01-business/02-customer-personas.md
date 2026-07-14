@@ -295,14 +295,13 @@ Future releases may introduce dedicated experiences for some of these personas.
 
 # Persona Priority (MVP)
 
-The MVP should optimize for the following order:
+V1.0 should optimize for the following order:
 
 1. Occasion Host
 2. Committee Member
 3. Guest
-4. Vendor
 
-Organizational capabilities should be introduced after the core consumer workflow is validated.
+Vendor is deferred to Release 1.1 (Marketplace) — see the [Roadmap](../02-product/08-roadmap.md). Organizational capabilities should be introduced after the core consumer workflow is validated, and after Marketplace.
 
 ---
 

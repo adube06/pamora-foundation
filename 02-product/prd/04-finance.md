@@ -57,12 +57,20 @@ It does **not** own:
 
 Represents the financial plan for an Occasion.
 
-Contains:
+Stored attributes:
 
-* Categories
+* Budget ID
+* Occasion ID
+* Name
+* Currency
 * Planned Amount
-* Current Spending
-* Remaining Balance
+* Status
+* Created By
+* Created At
+
+A Budget has many Budget Categories (a separate entity, see below) — Categories are a relationship, not a field on Budget.
+
+Current Spending, Remaining Balance, Total Received, and Total Expense are **not** stored on Budget. They are derived values, calculated at read time from Budget Items, Pledges, Contributions, and Expenses, per the ledger-first architecture below (see ADR-004). Storing them here would contradict that architecture.
 
 ---
 
@@ -273,7 +281,7 @@ Communication Domain
 
 Insights Domain
 
-* Financial Health Score
+* Financial Health (see Insights PRD)
 
 ---
 

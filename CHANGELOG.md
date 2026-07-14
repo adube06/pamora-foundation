@@ -111,3 +111,36 @@ All notable changes to the Pamora Foundation documentation are recorded here.
   * `03-design/06-accessibility.md`, `07-ui-principles.md`, `08-ux-guidelines.md`, `09-brand-guidelines.md`: Frozen → **Controlled** — durable design philosophy, but not literally domain/aggregate architecture; the specific ADR-backed principles within each (ADR-019, ADR-020, ADR-021, ADR-022) remain Frozen as recorded decisions regardless of the surrounding document's tag.
   * `04-engineering/11-monitoring.md`, `13-performance.md`: Frozen → **Controlled** — the underlying principles (traceability, measure-before-optimizing) stay Frozen via their ADRs, but specific SLOs/budgets are operational numbers meant to be recalibrated against real production evidence.
   * `05-ai/02-ai-prompt-library.md`: Living → **Controlled** — prompt wording changes don't need an ADR, but do need a quick review to avoid team-wide quality regressions.
+
+---
+
+## [1.6.0] — 2026-07-15
+
+### Fixed — architectural audit findings #1 and #2 (blockers)
+
+**#1 — MVP scope contradiction (Marketplace in V1.0 or not).** `02-mvp.md`'s "Included Domains" section listed Marketplace capabilities as part of the base MVP while its own "Recommendation" section deferred Marketplace to V1.1 — and the Roadmap and Customer Personas disagreed with each other about which was correct. Resolved: Marketplace is not part of V1.0.
+
+* `02-product/02-mvp.md` — Marketplace subsection now states "Deferred to Release 1.1. Not part of V1.0" instead of listing included capabilities. Also removed "Vendor profiles" from the Web Application Included list and "Vendor approval" from the Admin Portal Included list (both had nothing to reference without Marketplace present), and reworded Target Users to state Vendor is not a V1.0 persona. The "Recommendation — Slice V1.0 Further" section is retitled "Release Slicing (Adopted)" since it is now the authoritative scope, not a suggestion sitting alongside a contradicting one.
+* `01-business/02-customer-personas.md` — "Persona Priority (MVP)" no longer lists Vendor; it now states Vendor is deferred to Release 1.1, with a cross-reference to the Roadmap.
+* `02-product/08-roadmap.md` — no change; it was already correct and is now the single source of truth this decision aligns to.
+
+**#2 — Finance ledger contradiction.** `04-finance.md`'s own Budget entity description listed "Current Spending" and "Remaining Balance" as fields the Budget "contains" — directly violating ADR-004 (ledger-first architecture) three sections later in the same document.
+
+* `02-product/prd/04-finance.md` — Budget's stored attributes are now: Budget ID, Occasion ID, Name, Currency, Planned Amount, Status, Created By, Created At. Categories are documented as a relationship (Budget Category is its own entity), not a field. Current Spending, Remaining Balance, Total Received, and Total Expense are explicitly called out as derived values that must never be stored, with a direct pointer to ADR-004.
+
+### Fixed — architectural audit findings #3 and #8 (terminology)
+
+**#3 — "Health Score" vs "Readiness Score."** The Glossary and Business Rules used "Health Score" as the canonical name for the platform's readiness metric; the Insights PRD — the domain that actually owns it — used "Readiness Score" throughout and never used "Health Score" at all. Resolved: **Readiness Score** is canonical, since it required the fewest changes (the owning domain's PRD didn't need to move).
+
+* `00-overview/04-glossary.md` — "Health Score" entry renamed to "Readiness Score"; also now explicitly cross-references the Insights PRD and BR-033, and flags that the "Vendor confirmations" input isn't available until Marketplace ships in Release 1.1.
+* `00-overview/00-ai-master-context.md`, `00-overview/03-product-philosophy.md`, `04-engineering/04-domain-model.md`, `02-product/05-business-rules.md` (BR-033), `06-decisions/ADR-008-analytics-read-only.md` — all "Health Score" references renamed to "Readiness Score."
+* `02-product/prd/04-finance.md` — "Financial Health Score" corrected to "Financial Health" to match Insights PRD's actual (distinct) sub-metric name, avoiding confusion with the renamed Readiness Score.
+
+**#8 — "Participant" vs "OccasionMember."** Business Rules BR-010 and BR-011 defined "Participant" as if it were the canonical entity name, while ADR-002, ADR-009, and the People PRD all use "OccasionMember." The Glossary defined neither term.
+
+* `02-product/05-business-rules.md` — BR-010 and BR-011 now use "OccasionMember," with BR-010 cross-referencing ADR-002.
+* `00-overview/04-glossary.md` — added the missing "OccasionMember" entry (the actual root cause of the ambiguity — the ubiquitous-language document never defined the single most important entity ADR-002 introduced), noting that "Participant" remains acceptable as informal plain-English usage elsewhere in the Foundation.
+
+### Deferred to next round
+
+Findings #4 (Integrations Domain classification), #7 (canonical permission list), #11 (Constitution), and #13 (V1.0 manual-reconciliation limitation) remain open and are intentionally not addressed in this pass.

@@ -141,7 +141,7 @@ Examples include:
 * Budget insights
 * Timeline recommendations
 * Vendor performance
-* Occasion Health Score
+* Occasion Readiness Score
 
 Data should help users make better decisions rather than simply populate reports.
 

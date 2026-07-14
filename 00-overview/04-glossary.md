@@ -50,6 +50,18 @@ Every major feature in Pamora exists in relation to an Occasion.
 
 ---
 
+## OccasionMember
+
+The technical and business record of a User's participation in one specific Occasion.
+
+Every Host, Committee Member, and Guest is represented as an OccasionMember record, carrying that person's permissions, responsibilities, invitation status, and attendance status for that Occasion.
+
+A User account itself carries no role. Role, permission, and responsibility always live on the OccasionMember record, scoped to one Occasion — never on the User (see [ADR-002](../06-decisions/ADR-002-unified-occasion-member-model.md) and [ADR-009](../06-decisions/ADR-009-identity-separate-from-membership.md)).
+
+The same User has a separate OccasionMember record for every Occasion they participate in, potentially with different responsibilities in each. "Participant" is used informally elsewhere in this Foundation as a plain-English synonym; OccasionMember is the canonical entity name.
+
+---
+
 ## Occasion Host
 
 The person who creates an Occasion.
@@ -308,20 +320,20 @@ A Workspace contains all planning activities, participants, finances, tasks, doc
 
 ---
 
-## Health Score
+## Readiness Score
 
-A calculated indicator representing the overall readiness and health of an Occasion.
+A calculated indicator representing the overall readiness and health of an Occasion. Owned and computed by the Insights Domain (see the Insights PRD); it is never manually edited (Business Rule BR-033).
 
 It may consider:
 
 * Budget completion
 * Task completion
 * RSVP progress
-* Vendor confirmations
+* Vendor confirmations (from Release 1.1 onward — not available while Marketplace is out of scope in V1.0)
 * Contribution status
 * Timeline risks
 
-The Health Score helps organizers identify areas needing attention.
+The Readiness Score helps organizers identify areas needing attention.
 
 ---
 

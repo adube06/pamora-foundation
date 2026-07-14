@@ -128,15 +128,15 @@ Archived Occasions cannot receive new activities.
 
 ### BR-010
 
-A Participant belongs to an Occasion.
+An OccasionMember belongs to an Occasion.
 
-Participation has no meaning outside an Occasion.
+Membership has no meaning outside an Occasion (see [ADR-002](../06-decisions/ADR-002-unified-occasion-member-model.md)).
 
 ---
 
 ### BR-011
 
-A Participant may hold multiple responsibilities within the same Occasion.
+An OccasionMember may hold multiple responsibilities within the same Occasion.
 
 Example:
 
@@ -290,7 +290,7 @@ Deleted media should follow the platform retention policy.
 
 ### BR-033
 
-Health Score must always be calculated from live business data.
+Readiness Score must always be calculated from live business data.
 
 It must never be manually edited.
 

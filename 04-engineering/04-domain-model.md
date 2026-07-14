@@ -315,7 +315,7 @@ Generate analytics and decision support.
 * Dashboard
 * Metrics
 * Reports
-* Health Score
+* Readiness Score
 * Recommendations
 
 ---

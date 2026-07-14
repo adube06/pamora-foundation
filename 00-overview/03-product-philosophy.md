@@ -175,7 +175,7 @@ Examples include:
 * Guest
 * Vendor
 * Timeline
-* Health Score
+* Readiness Score
 
 Avoid generic terminology that hides business meaning.
 

@@ -40,7 +40,7 @@ Insights reads data, calculates KPIs, generates Scores (e.g. Readiness Score, Fi
 * Keeps domain ownership boundaries intact — consistent with the Domain Model's "No domain should directly manipulate another domain's internal state."
 * Eliminates an entire class of hidden side effects and makes Insights independently testable.
 * Recommendations remain advisory only (per the Insights PRD) — a Milestone still completes because its Planning-owned conditions were met (see [ADR-003](ADR-003-planning-hierarchy.md)), not because Insights decided so.
-* Business Rule BR-033 (Health Score must always be calculated from live business data, never manually edited) is a direct consequence of this ADR.
+* Business Rule BR-033 (Readiness Score must always be calculated from live business data, never manually edited) is a direct consequence of this ADR.
 
 ---
 

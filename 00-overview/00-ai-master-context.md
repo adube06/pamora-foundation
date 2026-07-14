@@ -163,7 +163,7 @@ Photos, videos, documents, invitations, and memories.
 
 ## Intelligence
 
-Insights, analytics, reports, health score, recommendations, and future AI capabilities.
+Insights, analytics, reports, readiness score, recommendations, and future AI capabilities.
 
 ---
 
