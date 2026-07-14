@@ -15,3 +15,16 @@ All notable changes to the Pamora Foundation documentation are recorded here.
 * Design: Information Architecture.
 * Engineering: Engineering Playbook, Domain Model, Coding Standards, API Standards, Database Standards, Testing Strategy, Security Standards, Deployment Standards.
 * Decisions: ADR-001 through ADR-016.
+
+---
+
+## [1.1.0] — 2026-07-14
+
+### Added
+
+* Engineering: Observability Standards (structured logging, metrics, tracing, health endpoints, alerts, SLOs).
+* Decisions: ADR-017 — Every Request Must Be Traceable.
+
+### Changed
+
+* `04-engineering/11-monitoring.md` upgraded from a Draft — Pending stub to the full Observability Standards document.
