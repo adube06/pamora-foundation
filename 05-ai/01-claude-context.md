@@ -179,11 +179,12 @@ Avoid optimizing for short-term convenience at the expense of long-term quality.
 
 Every document in this repository carries a `Stability` tag (see the root [README's Stability Model](../README.md#stability-model)):
 
-* **Frozen** — domain boundaries, identity models, aggregate roots, financial consistency, engineering/security standards, core design principles. Changing a Frozen document requires a new or updated ADR. Do not edit it directly to unblock a task.
-* **Living** — UX flows, screens, onboarding, task flows, contribution flows, the MVP slice, roadmap sequencing, business-strategy documents. These are expected to change based on observed user behavior. Update them directly; no ADR required.
-* **Mixed** — check the document's inline note for which sections are which.
+* **Frozen** — domain boundaries, identity models, aggregate roots, financial consistency, core architectural/engineering standards (security, database, API contracts, coding standards), business rules. Changing a Frozen document requires a new or updated ADR and architectural review. Do not edit it directly to unblock a task.
+* **Controlled** — business strategy, MVP/roadmap sequencing, and durable product/design standards (UI Principles, UX Guidelines, Accessibility, Brand Guidelines, Components, design token values, Performance/Observability budgets, the AI Prompt Library). Changing a Controlled document requires a documentation update plus review — no ADR, but not a silent edit either. Flag the change and its rationale explicitly.
+* **Living** — UX flows, screens, onboarding, task flows, contribution flows, navigation, feature/acceptance-criteria/edge-case catalogs. These are expected to change based on observed user behavior. Update them directly; no ADR or review gate required.
+* **Mixed** — check the document's inline note or cross-reference for which sections fall into which category.
 
-Before proposing a change to any document, check its Stability tag first. This determines whether the correct next step is "propose an ADR" or "just update the document."
+Before proposing a change to any document, check its Stability tag first. This determines whether the correct next step is "propose an ADR," "update and flag for review," or "just update the document."
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Status:** Mandatory
 
-**Stability:** Living
+**Stability:** Controlled
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Status:** Mandatory
 
-**Stability:** Frozen
+**Stability:** Controlled — the performance principles (measure before optimizing, scale in order) are durable, but the specific budgets (response-time targets, queue-wait targets) are operational numbers meant to be recalibrated against real production evidence, not architecture.
 
 ---
 

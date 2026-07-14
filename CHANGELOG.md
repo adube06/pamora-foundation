@@ -91,3 +91,23 @@ All notable changes to the Pamora Foundation documentation are recorded here.
   * `01-business/`, `02-product/02-mvp.md`, `03-feature-catalog.md`, `04-user-journeys.md`, `06-acceptance-criteria.md`, `07-edge-cases.md`, `08-roadmap.md`, `03-design/01-information-architecture.md`, `02-navigation.md`, `04-screen-specifications.md`, `05-components.md`, `05-ai/02-ai-prompt-library.md`, `05-chatgpt-product.md` → **Living** (business strategy, MVP/roadmap sequencing, UX flows and screens, prompt wording).
   * `02-product/00-product-scope.md`, `01-prd.md`, `05-business-rules.md`, all 10 domain PRDs, `03-design/03-design-system.md`, `06-accessibility.md`, `07-ui-principles.md`, `08-ux-guidelines.md`, `09-brand-guidelines.md` → **Frozen**, except `03-design-system.md` which is **Mixed** (token architecture principle Frozen, specific token values Living) and each domain PRD which is Frozen-with-an-inline-note (entities/events/ADRs Frozen; illustrative FR flows Living).
 * `02-product/01-prd.md` — added a "Stability Within a Domain PRD" section explaining the split within each domain PRD, referenced from all 10 domain PRD files.
+
+---
+
+## [1.5.0] — 2026-07-15
+
+### Changed
+
+* **Stability Model upgraded from two categories to three: `Frozen` / `Controlled` / `Living`.** The binary model conflated two genuinely different kinds of decision under "Living" — things that evolve purely from observed user behavior (a screen flow) and things that are deliberate business/design calls that still shouldn't be edited casually (a revenue phase, a UI principle). `Controlled` closes that gap: changeable without an ADR, but requires a documentation update plus review, not a silent edit.
+* README: Stability Model section rewritten with the three categories and their respective change processes (ADR + architectural review / documentation update + review / direct update).
+* Claude Context: "Check Stability Before Deciding How to Change a Document" section rewritten for the three-way split.
+* PRD index: "Stability Within a Domain PRD" section rewritten — each domain PRD is now `Mixed` across all three categories (Frozen entities/events, Controlled functional requirements, Living illustrative flows), not just Frozen/Living.
+* Re-tagged documents:
+  * `01-business/*` (7 files): Living → **Controlled** — business strategy requires deliberate leadership review to revise, not simple observation-driven updates.
+  * `02-product/02-mvp.md`, `08-roadmap.md`: Living → **Controlled** — release scope and sequencing decisions need product/leadership review.
+  * `02-product/prd/*` (all 10 domain PRDs): Frozen → **Mixed** — each PRD blends Frozen entities/events, Controlled functional requirements, and Living illustrative flows; a single Frozen tag overstated how much of each PRD is actually architecture.
+  * `03-design/03-design-system.md`: Mixed (Frozen/Living) → **Mixed (Frozen/Controlled)** — specific token values need design review, not silent edits.
+  * `03-design/05-components.md`: Living → **Controlled** — shared component states/variants need design review since changes ripple across both React and Flutter.
+  * `03-design/06-accessibility.md`, `07-ui-principles.md`, `08-ux-guidelines.md`, `09-brand-guidelines.md`: Frozen → **Controlled** — durable design philosophy, but not literally domain/aggregate architecture; the specific ADR-backed principles within each (ADR-019, ADR-020, ADR-021, ADR-022) remain Frozen as recorded decisions regardless of the surrounding document's tag.
+  * `04-engineering/11-monitoring.md`, `13-performance.md`: Frozen → **Controlled** — the underlying principles (traceability, measure-before-optimizing) stay Frozen via their ADRs, but specific SLOs/budgets are operational numbers meant to be recalibrated against real production evidence.
+  * `05-ai/02-ai-prompt-library.md`: Living → **Controlled** — prompt wording changes don't need an ADR, but do need a quick review to avoid team-wide quality regressions.

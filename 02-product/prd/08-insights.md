@@ -4,7 +4,7 @@
 
 **Status:** Approved
 
-**Stability:** Frozen (see [Stability Within a Domain PRD](../01-prd.md#stability-within-a-domain-prd))
+**Stability:** Mixed (see [Stability Within a Domain PRD](../01-prd.md#stability-within-a-domain-prd))
 
 ---
 

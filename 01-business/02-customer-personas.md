@@ -4,7 +4,7 @@
 
 **Status:** Approved
 
-**Stability:** Living
+**Stability:** Controlled
 
 ---
 

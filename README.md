@@ -149,33 +149,37 @@ Every document in this repository follows a common structure:
 
 # Stability Model
 
-Not every decision in this Foundation is equally expensive to change.
-
-Every document carries a **Stability** tag alongside its Version and Status:
+Not every decision in this Foundation is equally expensive to change, and not every change carries the same risk. Every document carries a **Stability** tag alongside its Version and Status, using one of three categories:
 
 ## Frozen
 
-Domain boundaries, identity models, aggregate roots, financial consistency (ledger architecture), business rules, engineering/security/testing/deployment standards, and core design principles.
+Domain boundaries, identity models, aggregate roots, financial consistency (ledger architecture), business rules, and core architectural/engineering standards (security, database, API contracts, coding standards).
 
 These are one-way-door decisions: expensive or risky to change once real users, real data, or real financial history exist on top of them.
 
-**Changing a Frozen document requires a new or updated ADR.** Implementation convenience is never a valid reason to bypass one.
+**Changing a Frozen document requires a new or updated ADR and architectural review.** Implementation convenience is never a valid reason to bypass one.
+
+## Controlled
+
+Business strategy (market analysis, personas, GTM, revenue phasing), release scope and sequencing (MVP slice, roadmap), and durable-but-not-architectural product/design standards (UI Principles, UX Guidelines, Accessibility, Brand Guidelines, Components, specific design token values, operational budgets like Performance and Observability targets, the AI Prompt Library).
+
+These aren't one-way doors, but they aren't casual edits either — changing them has ripple effects across teams or across the product's consistency, so they require a deliberate documentation update plus review (design review for product/design documents, leadership review for business-strategy documents). **No ADR is required**, but an update should not happen silently.
 
 ## Living
 
-UX flows, screens, onboarding, task flows, contribution flows, specific journeys, the MVP feature slice, the roadmap sequencing, and business-strategy documents (market analysis, personas, GTM, revenue phasing).
+UX flows, screens, onboarding, task flows, contribution flows, specific journeys, navigation, and the feature/acceptance-criteria/edge-case catalogs.
 
 These are two-way-door decisions: they are *expected* to evolve once real users interact with the product. Observed behavior is evidence, not a violation of the Foundation.
 
-**Living documents can be updated directly** as evidence comes in — no ADR required. Just keep the document in sync with what actually shipped.
+**Living documents can be updated directly** as evidence comes in — no ADR, no review gate required. Just keep the document in sync with what actually shipped.
 
 ## Mixed
 
-A small number of documents contain both kinds of decisions in one file (for example, a domain PRD defines Frozen entities/events alongside illustrative, Living UX flow examples). These carry a `Mixed` tag with an inline note identifying which sections are which.
+A small number of documents contain more than one category in a single file (for example, a domain PRD defines Frozen entities/events alongside Controlled functional requirements and Living illustrative UX flow examples). These carry a `Mixed` tag with an inline note or a cross-reference identifying which sections are which.
 
 ## Why this exists
 
-The Foundation is meant to protect the decisions that are genuinely hard to unwind — not to freeze the user experience before a single real user has touched the product. Sequencing is: **Foundation → MVP → Real Usage → Observation → Iteration → Product-Market Fit.** The Stability tag makes explicit, at a glance, which category a given document falls into, so that iteration on Living documents never feels like — or requires — relitigating the Frozen ones.
+The Foundation is meant to protect the decisions that are genuinely hard to unwind — not to freeze the user experience or the business strategy before a single real user has touched the product. Sequencing is: **Foundation → MVP → Real Usage → Observation → Iteration → Product-Market Fit.** The Stability tag makes explicit, at a glance, which category a given document falls into, and what process (ADR, review, or direct update) governs changing it — so that iteration on Living and Controlled documents never feels like, or requires, relitigating the Frozen ones.
 
 ---
 

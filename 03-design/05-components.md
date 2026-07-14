@@ -4,7 +4,7 @@
 
 **Status:** Draft — Pending
 
-**Stability:** Living
+**Stability:** Controlled
 
 ---
 

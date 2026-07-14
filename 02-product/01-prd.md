@@ -48,12 +48,13 @@ The domain-level PRDs live alongside this index, one file per domain:
 
 # Stability Within a Domain PRD
 
-Each domain PRD is tagged `Stability: Frozen` as a whole, but not every sentence in it carries equal weight. Within any PRD:
+Each domain PRD is tagged `Stability: Mixed` as a whole, because it blends three different kinds of decision (see the [Stability Model](../README.md#stability-model)):
 
-* **Frozen:** the domain's owned entities (Section 4), domain events (Section 8/10), and any linked ADR — these define the aggregate and its contract with other domains.
-* **Living:** specific functional-requirement flows, UI expectations, and example screens — these are the current best guess at implementation and are expected to change once real usage data exists (see the [Stability Model](../README.md#stability-model)).
+* **Frozen:** the domain's owned entities (Section 4), domain events (Section 8/10), and any linked ADR — these define the aggregate and its contract with other domains. Changing these requires an ADR.
+* **Controlled:** the functional requirements themselves (Section 7, FR-XXX) and any domain-specific business rules — these define required system capability. Changing which capabilities exist requires a documentation update and product/design review, but not necessarily an ADR unless the change also touches an aggregate or entity.
+* **Living:** illustrative UI expectations, example flows, and specific screens referenced within a requirement — these are the current best guess at implementation and are expected to change once real usage data exists.
 
-When a PRD's Living sections change based on observed behavior, update the PRD directly. When its Frozen sections need to change, propose an ADR first.
+When a PRD's Living sections change based on observed behavior, update the PRD directly. When a Controlled section (an FR's scope) changes, update the PRD and flag it for review. When its Frozen sections need to change, propose an ADR first.
 
 ---
 

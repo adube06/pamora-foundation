@@ -4,7 +4,7 @@
 
 **Status:** Mandatory
 
-**Stability:** Frozen
+**Stability:** Controlled — the request-traceability principle ([ADR-017](../06-decisions/ADR-017-request-traceability.md)) is Frozen; specific SLO numbers, alert thresholds, and tooling choices are Controlled and expected to be recalibrated against real production evidence.
 
 ---
 
