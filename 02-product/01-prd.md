@@ -41,8 +41,10 @@ The domain-level PRDs live alongside this index, one file per domain:
 ├── 07-media.md
 ├── 08-insights.md
 ├── 09-identity.md
-└── 10-integrations.md
+└── 10-integrations.md      (Supporting Technical Domain — not a Core Business Domain)
 ```
+
+`10-integrations.md` is documented alongside the 9 Core Business Domain PRDs for convenience, but it is classified separately in the [Domain Model](../04-engineering/04-domain-model.md#10-integrations-supporting-technical-domain): it owns no business data or business rules, and exists solely to keep the Core Business Domains decoupled from external providers.
 
 ---
 

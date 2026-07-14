@@ -181,7 +181,9 @@ Invited
 
 Permissions should be assigned through capabilities rather than hard-coded roles.
 
-Examples:
+The examples below are illustrative umbrella categories, not enforceable permission strings. The actual, canonical permission catalog — the exact strings checked in code — lives in the [Permission Catalog](../09-permission-catalog.md) and is organized per-domain (`finance.edit_budget`, `finance.record_contribution`, etc.), not as broad umbrellas like "Manage Finance."
+
+Illustrative categories:
 
 * Manage Occasion
 * Manage Planning

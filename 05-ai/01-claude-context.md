@@ -145,6 +145,19 @@ Favor clarity over cleverness.
 
 ---
 
+# Foundation Is in Maintenance Mode
+
+As of v1.0, the `pamora-foundation` repository is released and in maintenance mode (see the root [README's Foundation Governance Mode](../README.md#foundation-governance-mode) and the [Constitution](../04-engineering/01-constitution.md), Article X).
+
+Do not add new Foundation documents speculatively. Only add or change Foundation content when:
+
+* A new ADR is needed (an architectural decision was made or is being proposed), or
+* Implementation in `pamora-app` surfaces a genuine gap, contradiction, or ambiguity in the existing Foundation.
+
+Routine feature work happens in `pamora-app`, not here. If a task looks like "write another Foundation document," stop and confirm that's actually what's being asked before proceeding — the default assumption should be that the Foundation is complete enough to build from.
+
+---
+
 # Development Workflow
 
 Before implementing:

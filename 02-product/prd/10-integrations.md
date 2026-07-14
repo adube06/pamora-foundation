@@ -8,6 +8,12 @@
 
 ---
 
+# Classification
+
+**Supporting Technical Domain — not a Core Business Domain.** See the [Domain Model](../../04-engineering/04-domain-model.md#10-integrations-supporting-technical-domain). Integrations owns no business data and enforces no business rule; it exists to serve the 9 Core Business Domains, not to model a business capability of its own.
+
+---
+
 # 1. Purpose
 
 The Integrations Domain provides a standardized mechanism for connecting Pamora with external systems and third-party services.

@@ -197,6 +197,22 @@ Undocumented implementation is not considered complete.
 
 ---
 
+# Foundation Governance Mode
+
+As of v1.0, the Foundation is in **maintenance mode**, not active drafting.
+
+The Foundation was built, then stress-tested through three rounds of architectural audit (contradictions, missing decisions, unclear ownership, hidden assumptions, circular dependencies) until it reached internal consistency — no two Frozen documents contradicting each other, canonical terminology throughout, every foundational decision traceable to an ADR (see the [Constitution](04-engineering/01-constitution.md), Article X).
+
+From this point forward:
+
+* **No new Foundation documents are added speculatively.** New documentation is added only in response to a new ADR (an architectural decision that needs recording) or an issue discovered during implementation (a gap, contradiction, or ambiguity real usage exposes).
+* **Frozen and Controlled documents change only through their normal governance process** — an ADR for Frozen, a documentation update plus review for Controlled.
+* **Living documents update freely and continuously** as real user behavior from `pamora-app` provides evidence — this is expected and encouraged, not a departure from the Foundation.
+
+The center of gravity moves to `pamora-app`. This repository's job now is to stay internally consistent while the product is built, not to keep growing ahead of it.
+
+---
+
 # Repository Status
 
 Current Version:
@@ -205,7 +221,7 @@ Current Version:
 
 Status:
 
-**Under Active Development**
+**Released**
 
 ---
 

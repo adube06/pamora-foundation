@@ -22,7 +22,9 @@ Business domains should remain stable even if the underlying technology changes.
 
 # Domain Overview
 
-Pamora consists of the following primary domains:
+Pamora consists of 9 **Core Business Domains**, plus one **Supporting Technical Domain**:
+
+## Core Business Domains
 
 1. Identity
 2. Occasion
@@ -33,6 +35,10 @@ Pamora consists of the following primary domains:
 7. Communication
 8. Media
 9. Insights
+
+## Supporting Technical Domain
+
+* **Integrations** — see the dedicated section below. It is deliberately excluded from the numbered Core Business Domain list above, because it owns no business data and enforces no business rule.
 
 Each domain owns its own business logic and data.
 
@@ -328,6 +334,36 @@ Generate analytics and decision support.
 * Operational insights
 
 This domain consumes data from other domains but should not modify them.
+
+---
+
+# 10. Integrations (Supporting Technical Domain)
+
+## Classification
+
+**Supporting Technical Domain — not a Core Business Domain.**
+
+In DDD terms, Integrations is a supporting/generic subdomain: it exists to serve the 9 Core Business Domains, not to model a business capability of its own. This is why it is numbered separately here rather than counted among the 9, and why it does not appear as a node in the Domain Relationships diagram below — every Core Business Domain may call into it, but it does not sit *in* the domain dependency chain.
+
+## Responsibility
+
+Provide a provider-independent interface for external systems (payment gateways, SMS/email/WhatsApp, maps, calendar, object storage, authentication providers), so that Core Business Domains never couple directly to a specific vendor's API.
+
+## Owns
+
+* Provider Configuration
+* API Connectors
+* Webhook Processing
+* Retry Policies
+* External Credentials
+
+## Does NOT Own
+
+Business data or business rules of any kind. It has no aggregate root and is not eligible to become one — a domain that owned business data would need to be reclassified as a Core Business Domain, which would itself require a constitutional discussion (see the Constitution, Article V).
+
+## Relationship to Core Business Domains
+
+Every Core Business Domain that needs an external provider depends on Integrations directly (Communication for delivery, Finance for payment gateways, Marketplace and Occasion for maps, Media for storage, Identity for external auth providers). See the [Integrations PRD](../02-product/prd/10-integrations.md) for the full list.
 
 ---
 

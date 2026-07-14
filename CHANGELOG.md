@@ -144,3 +144,25 @@ All notable changes to the Pamora Foundation documentation are recorded here.
 ### Deferred to next round
 
 Findings #4 (Integrations Domain classification), #7 (canonical permission list), #11 (Constitution), and #13 (V1.0 manual-reconciliation limitation) remain open and are intentionally not addressed in this pass.
+
+---
+
+## [2.0.0] — 2026-07-15 — Foundation v1.0 Released
+
+Closes the remaining four audit findings and formally releases the Foundation. Status moves from "Under Active Development" to **Released**, and governance moves to **maintenance mode**.
+
+### Added
+
+* **Constitution** (`04-engineering/01-constitution.md`) — written for the first time, closing Finding #11. The supreme governing document: establishes the full precedence hierarchy (Article I), the Occasion as the permanent core aggregate (Article II), the permanent separation of Identity and Membership (Article III), ledger-first financial truth (Article IV), domain data ownership and the Integrations boundary (Article V), default-deny security (Article VI), the Stability Model as constitutional law (Article VII), AI assistants' binding to the Constitution (Article VIII), the amendment process (Article IX), and the definition of a Foundation in good standing (Article X).
+* **ADR-027 — Manual Financial Recording During MVP** (`06-decisions/ADR-027-manual-financial-recording-during-mvp.md`) — closes Finding #13. States explicitly that V1.0 Contributions are self-reported and audit-logged, not payment-verified, and that trust rests on audit logs, the immutable ledger, and role permissions until Release 1.2 introduces Mobile Money integration. Cross-referenced from Finance PRD's FR-004.
+* **Canonical Permission Catalog** (`02-product/09-permission-catalog.md`) — closes Finding #7. One `{domain}.{action}` string per capability across all 9 Core Business Domains plus Platform Administration, replacing the informal, inconsistent permission examples scattered across each domain PRD. Tagged Frozen — it is an authorization contract. Cross-referenced from People PRD Section 7.
+
+### Changed
+
+* **Integrations reclassified as a Supporting Technical Domain, not a Core Business Domain** — closes Finding #4. `04-engineering/04-domain-model.md` now explicitly separates the 9 Core Business Domains from Integrations, with a new Section 10 explaining the classification (it owns no business data or business rules, in DDD terms it is a supporting/generic subdomain) and why it doesn't appear in the Domain Relationships diagram. `02-product/01-prd.md` and `02-product/prd/10-integrations.md` cross-reference the same classification.
+* README — "Repository Status" now reads **Released** instead of "Under Active Development." New "Foundation Governance Mode" section: no more speculative Foundation documents; changes only via new ADR or implementation-discovered issue; Frozen/Controlled documents follow their normal governance process; Living documents update freely from real usage.
+* Claude Context — new "Foundation Is in Maintenance Mode" section instructing AI assistants not to add Foundation content speculatively going forward.
+
+### Foundation status
+
+All 15 findings from the architectural audit are now resolved or explicitly and durably documented (#13 via ADR-027). The Foundation has moved from well-structured documentation to an internally consistent, governed architecture repository: no known contradictions between Frozen documents, canonical terminology throughout, every foundational commitment traceable to an ADR. Primary effort moves to `pamora-app`.

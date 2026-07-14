@@ -203,6 +203,8 @@ The platform must distinguish between:
 * Promised
 * Received
 
+In V1.0, recording is manual and self-reported — there is no payment gateway verification. Trust is established through audit logs, the immutable ledger, and role permissions, not payment confirmation. See [ADR-027](../../06-decisions/ADR-027-manual-financial-recording-during-mvp.md).
+
 ---
 
 ## FR-005 — Record Expense
