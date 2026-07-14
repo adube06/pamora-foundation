@@ -4,6 +4,8 @@
 
 **Status:** Approved
 
+**Stability:** Living
+
 ---
 
 # Purpose

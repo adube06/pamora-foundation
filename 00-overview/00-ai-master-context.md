@@ -4,6 +4,8 @@
 
 **Status:** Active
 
+**Stability:** Frozen
+
 **Last Updated:** July 2026
 
 ---

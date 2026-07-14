@@ -4,6 +4,8 @@
 
 **Status:** Mandatory
 
+**Stability:** Mixed — the tokens-before-components principle ([ADR-018](../06-decisions/ADR-018-tokens-before-components.md)) is Frozen; specific token values (exact colors, spacing scale, component list) are Living and expected to evolve.
+
 ---
 
 # Purpose

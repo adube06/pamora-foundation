@@ -6,6 +6,8 @@
 
 **Status:** Mandatory
 
+**Stability:** Frozen
+
 ---
 
 # Purpose
@@ -170,6 +172,18 @@ Prefer the option that:
 * Scales over time
 
 Avoid optimizing for short-term convenience at the expense of long-term quality.
+
+---
+
+# Check Stability Before Deciding How to Change a Document
+
+Every document in this repository carries a `Stability` tag (see the root [README's Stability Model](../README.md#stability-model)):
+
+* **Frozen** — domain boundaries, identity models, aggregate roots, financial consistency, engineering/security standards, core design principles. Changing a Frozen document requires a new or updated ADR. Do not edit it directly to unblock a task.
+* **Living** — UX flows, screens, onboarding, task flows, contribution flows, the MVP slice, roadmap sequencing, business-strategy documents. These are expected to change based on observed user behavior. Update them directly; no ADR required.
+* **Mixed** — check the document's inline note for which sections are which.
+
+Before proposing a change to any document, check its Stability tag first. This determines whether the correct next step is "propose an ADR" or "just update the document."
 
 ---
 

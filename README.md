@@ -147,6 +147,38 @@ Every document in this repository follows a common structure:
 
 ---
 
+# Stability Model
+
+Not every decision in this Foundation is equally expensive to change.
+
+Every document carries a **Stability** tag alongside its Version and Status:
+
+## Frozen
+
+Domain boundaries, identity models, aggregate roots, financial consistency (ledger architecture), business rules, engineering/security/testing/deployment standards, and core design principles.
+
+These are one-way-door decisions: expensive or risky to change once real users, real data, or real financial history exist on top of them.
+
+**Changing a Frozen document requires a new or updated ADR.** Implementation convenience is never a valid reason to bypass one.
+
+## Living
+
+UX flows, screens, onboarding, task flows, contribution flows, specific journeys, the MVP feature slice, the roadmap sequencing, and business-strategy documents (market analysis, personas, GTM, revenue phasing).
+
+These are two-way-door decisions: they are *expected* to evolve once real users interact with the product. Observed behavior is evidence, not a violation of the Foundation.
+
+**Living documents can be updated directly** as evidence comes in — no ADR required. Just keep the document in sync with what actually shipped.
+
+## Mixed
+
+A small number of documents contain both kinds of decisions in one file (for example, a domain PRD defines Frozen entities/events alongside illustrative, Living UX flow examples). These carry a `Mixed` tag with an inline note identifying which sections are which.
+
+## Why this exists
+
+The Foundation is meant to protect the decisions that are genuinely hard to unwind — not to freeze the user experience before a single real user has touched the product. Sequencing is: **Foundation → MVP → Real Usage → Observation → Iteration → Product-Market Fit.** The Stability tag makes explicit, at a glance, which category a given document falls into, so that iteration on Living documents never feels like — or requires — relitigating the Frozen ones.
+
+---
+
 # Contributing
 
 Every significant product or engineering decision must be documented before implementation.

@@ -4,6 +4,8 @@
 
 **Status:** Approved
 
+**Stability:** Frozen
+
 ---
 
 # Purpose
@@ -41,6 +43,17 @@ The domain-level PRDs live alongside this index, one file per domain:
 ├── 09-identity.md
 └── 10-integrations.md
 ```
+
+---
+
+# Stability Within a Domain PRD
+
+Each domain PRD is tagged `Stability: Frozen` as a whole, but not every sentence in it carries equal weight. Within any PRD:
+
+* **Frozen:** the domain's owned entities (Section 4), domain events (Section 8/10), and any linked ADR — these define the aggregate and its contract with other domains.
+* **Living:** specific functional-requirement flows, UI expectations, and example screens — these are the current best guess at implementation and are expected to change once real usage data exists (see the [Stability Model](../README.md#stability-model)).
+
+When a PRD's Living sections change based on observed behavior, update the PRD directly. When its Frozen sections need to change, propose an ADR first.
 
 ---
 

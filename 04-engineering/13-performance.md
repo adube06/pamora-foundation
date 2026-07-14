@@ -4,6 +4,8 @@
 
 **Status:** Mandatory
 
+**Stability:** Frozen
+
 ---
 
 # Purpose

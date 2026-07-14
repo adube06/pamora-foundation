@@ -4,6 +4,8 @@
 
 **Status:** Draft — Pending
 
+**Stability:** Frozen
+
 ---
 
 # Purpose
